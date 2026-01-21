@@ -56,19 +56,19 @@ export const PROJECTS: Project[] = [
 
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: 'Merced College',
-    title: 'Data Science Ambassador',
-    start: '2024',
-    end: 'Present',
-    link: 'https://www.mccd.edu/',
-    id: 'work1',
-  },
-  {
     company: 'University of Houston- Downtown',
     title: 'Research Assistant',
     start: '2026',
     end: 'Present',
     link: 'https://www.uhd.edu/',
+    id: 'work1',
+  },
+  {
+    company: 'Merced College',
+    title: 'Data Science Ambassador',
+    start: '2024',
+    end: 'Present',
+    link: 'https://www.mccd.edu/',
     id: 'work2',
   }
 ]
