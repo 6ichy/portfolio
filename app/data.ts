@@ -41,9 +41,16 @@ export const PROJECTS: Project[] = [
     name: 'Character Annotator',
     description: 'This app uses java to create a GUI that allows users to handwrite characters and save them paired them with their corresponding label in a json file for use in training ML models.',
     link: 'https://github.com/6ichy/CharacterAnnotator',
-    video:
-      '',
+    video: '',
     id: 'project2',
+  },
+  {
+    name: 'Arduino Tiny Machine Learning Workshop',
+    description:
+      'Organized and taught a workshop showing beginners how to create a ML model and upload it to an Arduino board.',
+    link: '',
+    video:'',
+    id: 'project3',
   },
 ]
 
@@ -56,6 +63,14 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     link: 'https://www.mccd.edu/',
     id: 'work1',
   },
+  {
+    company: 'University of Houston- Downtown',
+    title: 'Research Assistant',
+    start: '2026',
+    end: 'Present',
+    link: 'https://www.uhd.edu/',
+    id: 'work2',
+  }
 ]
 
 export const BLOG_POSTS: BlogPost[] = [
