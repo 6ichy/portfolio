@@ -129,12 +129,11 @@
   .photo { margin-top: 2rem; }
   .photo img {
     width: 100%;
-    max-height: 28rem;
-    object-fit: cover;
-    object-position: center 8%;
+    height: auto;
     border: 1.5px solid var(--ink);
     border-radius: 6px;
     display: block;
+    background: var(--card);
   }
   .photo figcaption {
     font-family: 'Bricolage Grotesque', sans-serif;
@@ -198,7 +197,9 @@
         <li>Work directly with faculty on data-driven interventions to improve how computer science is taught.</li>
       </ul>
         <figure class="photo">
-        <img src="presentation.jpg" alt="Richard presenting his research" loading="lazy">
+        <a href="presentation.jpg" target="_blank">
+          <img src="presentation.jpg" alt="Richard presenting his research" loading="lazy">
+        </a>  
         <figcaption>Presenting research on student emotional responses in programming, 2026.</figcaption>
 </figure>
     </div>
