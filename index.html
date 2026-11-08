@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Richard Manzo</title>
-<meta name="description" content="Richard Manzo, computer science student transferring to USC and working toward AI research.">
+<meta name="description" content="Richard Manzo, computer science student transferring to USC, working on AI research and AI for social good.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
@@ -16,21 +16,43 @@
     --ink: #1F2E5A;
     --ink-soft: #4F5C7A;
     --pulse: #C8323C;
-    --leaf: #3F7D5C;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { background: var(--paper); }
+  html { background: var(--paper); scroll-behavior: smooth; }
   body {
     font-family: 'Newsreader', Georgia, serif;
     font-size: 1.1875rem;
     line-height: 1.65;
     color: var(--ink);
   }
+  .wrap { max-width: 48rem; margin: 0 auto; padding: 0 1.5rem; }
+  section, .hero { scroll-margin-top: 3.5rem; }
 
-  .wrap { max-width: 62rem; margin: 0 auto; padding: 0 2rem; }
-  main section > * { max-width: 44rem; margin-left: auto; margin-right: auto; }
-  main section > .photo { max-width: none; }
-  .hero .wrap > * { max-width: 44rem; margin-left: auto; margin-right: auto; }
+  /* Nav */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1.5px solid var(--grid);
+  }
+  .topnav .wrap {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+  .topnav a {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .topnav a:hover { color: var(--pulse); }
 
   /* Hero */
   .hero {
@@ -38,60 +60,47 @@
       linear-gradient(var(--grid) 1px, transparent 1px),
       linear-gradient(90deg, var(--grid) 1px, transparent 1px);
     background-size: 24px 24px;
-    padding: 5rem 0 3rem;
+    padding: 5rem 0 3.5rem;
+  }
+  .intro {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
   }
   h1 {
     font-family: 'Bricolage Grotesque', sans-serif;
     font-weight: 800;
-    font-size: clamp(3rem, 11vw, 6rem);
+    font-size: clamp(3rem, 10vw, 5.25rem);
     line-height: 0.92;
     letter-spacing: -0.035em;
   }
-  .lede { font-size: 1.375rem; max-width: 34rem; margin-top: 1.5rem; color: var(--ink-soft); }
-  .scope {
-    margin-top: 2.5rem;
-    background: var(--card);
-    border: 1.5px solid var(--ink);
-    border-radius: 6px;
-    padding: 1rem 1rem 0.75rem;
+  .headshot {
+    width: 168px;
+    height: 168px;
+    object-fit: cover;
+    object-position: center 20%;
+    border-radius: 50%;
+    border: 3px solid var(--card);
+    box-shadow: 0 0 0 1.5px var(--ink);
+    flex-shrink: 0;
   }
-  canvas { width: 100%; height: 180px; display: block; }
-  .legend {
-    display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem;
+  .location {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 0.75rem;
     font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 0.875rem; color: var(--ink-soft);
-    margin-top: 0.5rem;html { scroll-behavior: smooth; }
-section, .hero { scroll-margin-top: 3.5rem; }
-
-.topnav {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: var(--paper);
-  border-bottom: 1.5px solid var(--grid);
-}
-.topnav .wrap {
-  display: flex;
-  gap: 1.5rem;
-  overflow-x: auto;
-  white-space: nowrap;
-  padding-top: 0.85rem;
-  padding-bottom: 0.85rem;
-}
-.topnav a {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  color: var(--ink-soft);
-  text-decoration: none;
-}
-.topnav a:hover { color: var(--pulse); }
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--ink-soft);
   }
-  .legend span::before {
-    content: ""; display: inline-block; width: 16px; height: 3px;
-    margin-right: 0.4rem; vertical-align: middle; background: var(--c);
+  .location svg { color: var(--pulse); }
+  .lede {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    color: var(--ink-soft);
   }
-  .legend .note { margin-left: auto; }
 
   /* Sections */
   section { padding: 3.5rem 0; border-top: 1.5px solid var(--grid); }
@@ -123,6 +132,19 @@ section, .hero { scroll-margin-top: 3.5rem; }
   a:hover { color: var(--pulse); }
   a:focus-visible { outline: 3px solid var(--pulse); outline-offset: 3px; border-radius: 2px; }
 
+  /* Poster */
+  .photo { margin-top: 2rem; }
+  .photo img {
+    width: 100%; height: auto; display: block;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    background: var(--card);
+  }
+  .photo figcaption {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.9375rem; color: var(--ink-soft); margin-top: 0.5rem;
+  }
+
   .placeholder {
     background: #FFF5D9; border: 1.5px dashed #B8902A;
     border-radius: 4px; padding: 1rem 1.25rem;
@@ -137,78 +159,19 @@ section, .hero { scroll-margin-top: 3.5rem; }
     padding: 2rem 0 3rem; font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 0.875rem; color: var(--ink-soft);
   }
-  .intro {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 1.5rem;
-  }
-  .headshot {
-    width: 160px;
-    height: 160px;
-    object-fit: cover;
-    border: 1.5px solid var(--ink);
-    border-radius: 6px;
-    background: var(--card);
-    flex-shrink: 0;
-  }
 
-  .photo { margin-top: 2rem; }
-  .photo img {
-    width: 100%;
-    height: auto;
-    border: 1.5px solid var(--ink);
-    border-radius: 6px;
-    display: block;
-    background: var(--card);
-  }
-  .photo figcaption {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 0.9375rem;
-    color: var(--ink-soft);
-    margin-top: 0.5rem;
-  }
-  html { scroll-behavior: smooth; }
-  section, .hero { scroll-margin-top: 3.5rem; }
-
-  .topnav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--paper);
-    border-bottom: 1.5px solid var(--grid);
-  }
-  .topnav .wrap {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    overflow-x: auto;
-    white-space: nowrap;
-    padding-top: 0.85rem;
-    padding-bottom: 0.85rem;
-  }
   @media (max-width: 760px) {
     .topnav .wrap { justify-content: flex-start; }
   }
-  .topnav a {
-    font-family: 'Bricolage Grotesque', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--ink-soft);
-    text-decoration: none;
-  }
-  .topnav a:hover { color: var(--pulse); }
-
   @media (max-width: 560px) {
     .hero { padding-top: 3rem; }
-    canvas { height: 140px; }
-    .legend .note { margin-left: 0; }
-    .intro { flex-direction: column-reverse; align-items: flex-start; }
-    .headshot { width: 120px; height: 120px; }
+    .intro { gap: 1.25rem; }
+    .headshot { width: 96px; height: 96px; }
   }
 </style>
 </head>
 <body>
+
 <nav class="topnav" aria-label="Sections">
   <div class="wrap">
     <a href="#home">Home</a>
@@ -220,14 +183,20 @@ section, .hero { scroll-margin-top: 3.5rem; }
     <a href="#contact">Connect</a>
   </div>
 </nav>
+
 <header class="hero" id="home">
   <div class="wrap">
     <div class="intro">
-      <h1>Richard<br>Manzo</h1>
-      <img class="headshot" src="richard.jpg" alt="Photo of Richard Manzo" width="160" height="160">
+      <img class="headshot" src="richard.jpg" alt="Photo of Richard Manzo" width="168" height="168">
+      <div class="name-block">
+        <h1>Richard<br>Manzo</h1>
+        <p class="location">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Los Angeles, CA
+        </p>
+      </div>
     </div>
-    <p class="lede">Computer science student transferring to USC in spring 2027. I research how students feel while they learn to program, using the signals their bodies give off, and I'm working toward a career in AI research.</p>
-    </div>
+    <p class="lede">CS student · AI research · AI for social good</p>
   </div>
 </header>
 
@@ -235,11 +204,10 @@ section, .hero { scroll-margin-top: 3.5rem; }
 
   <section id="about">
     <h2>About</h2>
-        <!-- EDIT: Make this sound like you. Add the "why" behind your path. -->
-        <p>I'm a computer science student transferring to USC in spring 2027. I work at the intersection of AI research and AI for social good.</p>
-        <p>I'm currently preparing my research for publication. It looks at how biometric signals relate to stress while students program, with the goal of making learning tools that adapt to how students are feeling.</p>
-        <p>Over the past two years, I've made tech more accessible to community college students. I helped launch UC Berkeley's Data 8 data science curriculum at Merced College and led workshops using TinyML on Arduino to introduce students to embedded AI. I'm transferring to USC to keep pursuing this work.</p>
-    </section>
+    <p>I'm a computer science student transferring to USC in spring 2027. I work at the intersection of AI research and AI for social good.</p>
+    <p>I'm currently preparing my research for publication. It looks at how biometric signals relate to stress while students program, with the goal of making learning tools that adapt to how students are feeling.</p>
+    <p>Over the past two years, I've worked to make tech more accessible to community college students. I helped launch UC Berkeley's Data 8 data science curriculum at Merced College and led workshops using TinyML on Arduino to introduce students to embedded AI. I'm transferring to USC to keep pursuing this work.</p>
+  </section>
 
   <section id="research">
     <h2>Research</h2>
@@ -251,18 +219,17 @@ section, .hero { scroll-margin-top: 3.5rem; }
         <li>Build Tableau visualizations that reveal behavioral patterns across motion, heart rate, and temperature.</li>
         <li>Work directly with faculty on data-driven interventions to improve how computer science is taught.</li>
       </ul>
-        <figure class="photo">
-        <a href="poster.pdf" target="_blank">
-          <img src="poster.png" alt="Research poster: students' emotional responses in programming environments">
-        </a> 
-        <figcaption>Research poster on student emotional responses in programming; presented at GMIS Albuquerque 2026.</figcaption>
-</figure>
+      <figure class="photo">
+        <a href="presentation.pdf" target="_blank">
+          <img src="presentation.png" alt="Research poster: biometric signals and student stress during programming" loading="lazy">
+        </a>
+        <figcaption>My research poster. Click to view full size.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <!-- EDIT: Replace each placeholder with a real project: what it does, what you used, and a GitHub link. -->
     <div class="entry">
       <h3>TinyML on Arduino</h3>
       <p class="meta">Python · TensorFlow Lite · Arduino</p>
@@ -271,12 +238,12 @@ section, .hero { scroll-margin-top: 3.5rem; }
     <div class="entry">
       <h3>Project two</h3>
       <p class="meta">Tools used</p>
-      <p class="placeholder">A PyTorch, data analysis, or other project from GitHub. If your research data can't be shared, a project on public data in the same style works well here.</p>
+      <p class="placeholder">A good spot for your agent: what it does, what you built it with, and a repo link.</p>
     </div>
   </section>
 
   <section id="teaching">
-    <h2>Teaching and recognition</h2>
+    <h2>Teaching &amp; Recognition</h2>
     <div class="entry">
       <h3>Invited panelist, National Workshop on Data Science Education</h3>
       <p class="meta">UC Berkeley · July 2025</p>
@@ -303,7 +270,7 @@ section, .hero { scroll-margin-top: 3.5rem; }
   </section>
 
   <section id="contact">
-    <h2>Get in touch</h2>
+    <h2>Connect</h2>
     <ul class="contact">
       <li><a href="mailto:rmanzo@usc.edu">rmanzo@usc.edu</a></li>
       <li><a href="https://linkedin.com/in/rmanzo19">LinkedIn</a></li>
@@ -314,81 +281,8 @@ section, .hero { scroll-margin-top: 3.5rem; }
 </main>
 
 <footer>
-  <div class="wrap">Richard Manzo · San Diego and Los Angeles</div>
+  <div class="wrap">Richard Manzo · Los Angeles, CA</div>
 </footer>
 
-<script>
-  const canvas = document.getElementById('trace');
-  const ctx = canvas.getContext('2d');
-  const styles = getComputedStyle(document.documentElement);
-  const colors = {
-    motion: styles.getPropertyValue('--ink').trim(),
-    heart: styles.getPropertyValue('--pulse').trim(),
-    temp: styles.getPropertyValue('--leaf').trim(),
-    grid: styles.getPropertyValue('--grid').trim()
-  };
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  let w = 0, h = 0;
-
-  function resize() {
-    const r = canvas.getBoundingClientRect();
-    const d = window.devicePixelRatio || 1;
-    w = r.width; h = r.height;
-    canvas.width = w * d; canvas.height = h * d;
-    ctx.setTransform(d, 0, 0, d, 0, 0);
-  }
-
-  const g = (x, mu, s) => Math.exp(-(((x - mu) / s) ** 2));
-
-  // Each signal returns a value roughly between -1 and 1
-  function heart(t) {
-    const p = (t % 0.85) / 0.85;
-    return 0.95 * g(p, 0.12, 0.012) - 0.3 * g(p, 0.15, 0.015)
-         + 0.18 * g(p, 0.42, 0.05) + 0.06 * g(p, 0.02, 0.03) - 0.3;
-  }
-  function motion(t) {
-    return 0.45 * Math.sin(t * 3.1) + 0.2 * Math.sin(t * 7.7 + 1)
-         + 0.12 * Math.sin(t * 17.3) * Math.sin(t * 0.9);
-  }
-  function temp(t) {
-    return 0.55 * Math.sin(t * 0.35) + 0.12 * Math.sin(t * 1.4 + 2);
-  }
-
-  const lanes = [
-    { fn: motion, color: () => colors.motion },
-    { fn: heart, color: () => colors.heart },
-    { fn: temp, color: () => colors.temp }
-  ];
-
-  function draw(now) {
-    const t = now / 1000;
-    const speed = 70; // pixels per second
-    ctx.clearRect(0, 0, w, h);
-
-    const laneH = h / lanes.length;
-    lanes.forEach((lane, i) => {
-      const mid = laneH * i + laneH / 2;
-      ctx.strokeStyle = colors.grid;
-      ctx.lineWidth = 1;
-      ctx.beginPath(); ctx.moveTo(0, mid); ctx.lineTo(w, mid); ctx.stroke();
-
-      ctx.strokeStyle = lane.color();
-      ctx.lineWidth = 2;
-      ctx.lineJoin = 'round';
-      ctx.beginPath();
-      for (let x = 0; x <= w; x += 2) {
-        const y = mid - lane.fn(t - (w - x) / speed) * laneH * 0.4;
-        x === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-      }
-      ctx.stroke();
-    });
-
-    if (!reduceMotion) requestAnimationFrame(draw);
-  }
-
-  resize();
-  window.addEventListener('resize', () => { resize(); if (reduceMotion) draw(12000); });
-  reduceMotion ? draw(12000) : requestAnimationFrame(draw);
-</script>
 </body>
 </html>
