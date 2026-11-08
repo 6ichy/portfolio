@@ -143,6 +143,32 @@
     color: var(--ink-soft);
     margin-top: 0.5rem;
   }
+  html { scroll-behavior: smooth; }
+  section, .hero { scroll-margin-top: 3.5rem; }
+
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--paper);
+    border-bottom: 1.5px solid var(--grid);
+  }
+  .topnav .wrap {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+  }
+  .topnav a {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .topnav a:hover { color: var(--pulse); }
 
   @media (max-width: 560px) {
     .hero { padding-top: 3rem; }
@@ -154,8 +180,18 @@
 </style>
 </head>
 <body>
-
-<header class="hero">
+<nav class="topnav" aria-label="Sections">
+  <div class="wrap">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#research">Research</a>
+    <a href="#projects">Projects</a>
+    <a href="#teaching">Teaching &amp; Recognition</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Connect</a>
+  </div>
+</nav>
+<header class="hero" id="home">
   <div class="wrap">
     <div class="intro">
       <h1>Richard<br>Manzo</h1>
