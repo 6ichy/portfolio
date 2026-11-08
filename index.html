@@ -108,11 +108,28 @@
     padding: 2rem 0 3rem; font-family: 'Bricolage Grotesque', sans-serif;
     font-size: 0.875rem; color: var(--ink-soft);
   }
+  .intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .headshot {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    background: var(--card);
+    flex-shrink: 0;
+  }
 
   @media (max-width: 560px) {
     .hero { padding-top: 3rem; }
     canvas { height: 140px; }
     .legend .note { margin-left: 0; }
+    .intro { flex-direction: column-reverse; align-items: flex-start; }
+    .headshot { width: 120px; height: 120px; }
   }
 </style>
 </head>
@@ -121,9 +138,9 @@
 <header class="hero">
   <div class="wrap">
     <div class="intro">
-  <h1>Richard<br>Manzo</h1>
-  <img class="headshot" src="richard.jpg" alt="Photo of Richard Manzo" width="160" height="160">
-</div>
+      <h1>Richard<br>Manzo</h1>
+      <img class="headshot" src="richard.jpg" alt="Photo of Richard Manzo" width="160" height="160">
+    </div>
     <p class="lede">Computer science student transferring to USC in spring 2027. I research how students feel while they learn to program, using the signals their bodies give off, and I'm working toward a career in AI research.</p>
 
     <div class="scope" role="img" aria-label="Animated sensor readout showing simulated motion, heart rate and temperature signals">
