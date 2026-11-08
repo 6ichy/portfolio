@@ -26,7 +26,9 @@
     line-height: 1.65;
     color: var(--ink);
   }
-  .wrap { max-width: 46rem; margin: 0 auto; padding: 0 1.5rem; }
+
+  .wrap { max-width: 62rem; margin: 0 auto; padding: 0 2rem; }
+  main p, main ul, .lede { max-width: 44rem; }
 
   /* Hero */
   .hero {
@@ -123,6 +125,22 @@
     background: var(--card);
     flex-shrink: 0;
   }
+  
+  .photo { margin-top: 2rem; }
+  .photo img {
+    width: 100%;
+    max-height: 28rem;
+    object-fit: cover;
+    border: 1.5px solid var(--ink);
+    border-radius: 6px;
+    display: block;
+  }
+  .photo figcaption {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--ink-soft);
+    margin-top: 0.5rem;
+  }
 
   @media (max-width: 560px) {
     .hero { padding-top: 3rem; }
@@ -160,7 +178,11 @@
   <section id="about">
     <h2>About</h2>
     <!-- EDIT: Make this sound like you. Add the "why" behind your path. -->
-    <p>I started studying computer science at Merced College in 2024. Along the way I helped launch a new data science course on campus, taught workshops on running machine learning models on tiny microcontrollers, spoke on a national panel at UC Berkeley, and joined an undergraduate research program studying students' emotional responses while they code.</p>
+    <p>I started studying computer science at Merced College in 2024. 
+      Along the way I helped launch a new data science course on campus, 
+      taught workshops on running machine learning models on tiny microcontrollers, 
+      spoke on a national panel at UC Berkeley, and joined an undergraduate 
+      research program studying students' emotional responses while they code.</p>
     <p>Next I'm transferring to the University of Southern California to keep building toward AI research.</p>
   </section>
 
@@ -174,6 +196,10 @@
         <li>Build Tableau visualizations that reveal behavioral patterns across motion, heart rate, and temperature.</li>
         <li>Work directly with faculty on data-driven interventions to improve how computer science is taught.</li>
       </ul>
+        <figure class="photo">
+        <img src="presenting.jpg" alt="Richard presenting his research" loading="lazy">
+        <figcaption>Presenting research on student emotional responses in programming, 2026.</figcaption>
+</figure>
     </div>
   </section>
 
