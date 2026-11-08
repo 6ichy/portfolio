@@ -229,12 +229,18 @@
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
     <div class="entry">
-      <h3>TinyML on Arduino</h3>
-      <p class="meta">Python · TensorFlow Lite · Arduino</p>
-      <p class="placeholder">Describe one of the embedded ML projects from your workshops: what the model detects, how you trained and deployed it, and what you learned. Link the repo.</p>
+      <h3>TinyML Handwriting Recognition System</h3>
+      <p class="meta">C++ · Arduino · TinyML · CNN · Merced College, Spring 2026</p>
+      <p>A system where you draw letters in the air with a TinyML microcontroller and a neural network guesses what you wrote. Building on HarvardX's magic_wand application, I tracked the board's motion to draw characters on a computer canvas, used an Arduino Uno with buttons to save or clear drawings, and sent each saved image to a pre-trained convolutional neural network for a prediction.</p>
+      <ul>
+        <li>Wrote the C++ application that connects everything: hardware input, canvas state, image export, and model predictions.</li>
+        <li>Exported drawings as PNG files and organized them into datasets for prediction and future training.</li>
+        <li>Used LED patterns to show when a drawing was saved and how confident the model was in its prediction.</li>
+      </ul>
+      <p><a href="https://github.com/6ichy/REPO-NAME" target="_blank">View on GitHub</a></p>
     </div>
+    
     <div class="entry">
       <h3>Project two</h3>
       <p class="meta">Tools used</p>
